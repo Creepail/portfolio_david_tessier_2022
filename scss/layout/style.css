@@ -8,17 +8,18 @@ font-family: 'Roboto', sans-serif;
   box-sizing: border-box; }
 
 :root {
-  --main-bg-color: #1c1c1c;
-  --pink-neon: rgb(255,0,141); }
+  --main-bg-color: rgb(28, 28, 28);
+  --pink-neon: #ff008d; }
 
 body {
   background-color: var(--main-bg-color); }
 
 .intro {
   width: 100%;
-  height: 100vh;
+  height: 50vh;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  margin-bottom: 50px; }
   .intro div {
     height: 50%;
     width: 100%; }
@@ -50,14 +51,17 @@ body {
       background-color: var(--main-bg-color);
       padding: 10px 10px 10px 10px;
       border: 3px solid var(--pink-neon);
-      border-radius: 25px; }
+      border-radius: 25px;
+      transition: all 1s; }
+      .intro div:nth-child(2) button:hover {
+        font-size: 26px; }
 
-.skill_title {
+.title {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center; }
-  .skill_title h1 {
+  .title h1 {
     font-family: 'Oswald', sans-serif;
     font-size: 46px;
     color: white;
@@ -67,13 +71,15 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  height: fit-content;
+  margin-bottom: 50px; }
   .skill div {
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    width: 45%;
+    width: fit-content;
     height: 200px;
     position: relative; }
     .skill div p {
@@ -84,8 +90,27 @@ body {
       position: absolute;
       bottom: 0px; }
     .skill div img {
-      width: 50%;
+      width: 100px;
       margin: 30px;
-      fill: white; }
+      opacity: 50%;
+      filter: brightness(0) saturate(100%) invert(14%) sepia(95%) saturate(6882%) hue-rotate(320deg) brightness(103%) contrast(108%) opacity(50%);
+      transition: all 1s; }
+    .skill div img:hover,
+    .skill div img:focus {
+      filter: none;
+      transition: all 1s;
+      opacity: 100%; }
+
+.about_me {
+  width: 100%;
+  height: 30vh; }
+  .about_me p {
+    font-size: 23px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin: 35px; }
+    .about_me p a {
+      color: var(--pink-neon); }
 
 /*# sourceMappingURL=style.css.map */
