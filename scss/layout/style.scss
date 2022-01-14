@@ -10,7 +10,7 @@ font-family: 'Roboto', sans-serif;
 }
 
 :root{
-    --main-bg-color: rgb(28,28,28);
+    --main-bg-color: #1c1c1c;
     --pink-neon:  rgb(255,0,141);
 }
 
@@ -111,6 +111,7 @@ body{
         img{
             width: 50%;
             margin: 30px;
+            fill: white;
         }
 
     }
