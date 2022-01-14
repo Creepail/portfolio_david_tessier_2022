@@ -52,4 +52,39 @@ body {
       border: 3px solid var(--pink-neon);
       border-radius: 25px; }
 
+.skill_title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .skill_title h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 46px;
+    color: white;
+    text-decoration: underline var(--pink-neon); }
+
+.skill {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; }
+  .skill div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 45%;
+    height: 200px;
+    position: relative; }
+    .skill div p {
+      font-size: 23px;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+      position: absolute;
+      bottom: 0px; }
+    .skill div img {
+      width: 50%;
+      margin: 30px; }
+
 /*# sourceMappingURL=style.css.map */
