@@ -3,6 +3,8 @@ font-family: 'Oswald', sans-serif;
 font-family: 'Roboto', sans-serif;
 */
 
+@import'../abstract/mixing';
+
 *{
     margin: 0px;
     padding: 0px;
@@ -24,10 +26,22 @@ body{
     display: flex;
     flex-direction: column;
     margin-bottom: 50px;
+    margin-top: 50px;
+
+    @include tablet{
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: flex-start;
+    }
 
     div{
         height: 50%;
         width: 100%;
+
+        @include tablet{
+            height: 100%;
+            width: 50%;
+        }
     }
 
     div:nth-child(1){
@@ -35,6 +49,8 @@ body{
        background-position: center; 
        background-repeat: no-repeat; 
        background-size:contain;
+
+
         
     }
 
@@ -45,10 +61,24 @@ body{
         flex-direction: column;
         gap: 5%;
 
+        
+
+        @include tablet{
+            justify-content: center;
+            width: fit-content;
+            position: relative;
+        }
+
         h1{
             font-family: 'Oswald', sans-serif;
             font-size: 46px;
             color: white;
+           
+            @include tablet{
+                text-align: left;
+                padding-left: 20px;
+                width: 100%; 
+            }
         }
 
         p{
@@ -69,9 +99,14 @@ body{
             border-radius: 25px;
             transition: all 1s;
 
+            @include tablet{
+                position: absolute;
+                bottom: 50px;
+                right: 50px;
+             }
 
             &:hover{
-                font-size: 26px;
+                padding: 12px 12px 12px 12px;
             }
         }
     }
