@@ -10,9 +10,6 @@ function getOffset(el) {
     };
   }
 
-console.log(info.scrollTop)
-console.log(info.scrollLeft)
-
 learn_more.addEventListener("click", function(){
     window.scrollTo({
         top: getOffset(info).top,
@@ -21,8 +18,67 @@ learn_more.addEventListener("click", function(){
     });
 })
 
+let skills = document.querySelector('.title_skill')
+let skills_name = document.querySelectorAll('.skills_name')
+
+
+
 window.addEventListener('scroll', function(){
-    console.log(window.scrollY)
+    let i = getOffset(skills).top - 100
+    if(window.scrollY >= i){
+        skills_name.forEach(element => {
+            element.classList.add('active_skill')
+        });
+    }
 })
 
 
+function bubblespawn(a){
+        
+        let i = 0
+
+    while(i != a){
+
+        let bubble = document.createElement("div")
+        bubble.classList.add('bubble')
+
+        let randomcolor = Math.floor(Math.random() * 3) + 1;
+
+        if(randomcolor == 1){
+            bubble.style.backgroundColor = 'var(--pink-neon)'
+            bubble.style.boxShadow = '0px 0px 40px 20px var(--pink-neon)'
+
+        } else if(randomcolor == 2) {
+            bubble.style.backgroundColor = 'var(--blue-neon)'
+            bubble.style.boxShadow = '0px 0px 40px 20px var(--blue-neon)'
+        } else {
+            bubble.style.backgroundColor = 'var(--purple-neon)'
+            bubble.style.boxShadow = '0px 0px 40px 20px var(--purple-neon)'
+        }
+
+        let randomSize = Math.floor(Math.random() * 50) + 1;
+        let randomLeft = Math.floor(Math.random() * 90) + 1;
+        let randomTop = Math.floor(Math.random() * 90) + 1;
+
+        bubble.style.width = randomSize + 'px'
+        bubble.style.height = randomSize + 'px'
+
+        bubble.style.left = randomLeft + '%'
+        bubble.style.top = randomTop + '%'
+
+        bubble.addEventListener("animationend", function(){
+            bubble.remove()
+        },false)
+
+        
+        let body = document.querySelector('body')
+        body.appendChild(bubble)
+        i+=1
+    }
+
+    setTimeout(function() {
+        bubblespawn(a)
+    }, 1000);
+}
+
+bubblespawn(5)

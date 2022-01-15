@@ -14,10 +14,14 @@ font-family: 'Roboto', sans-serif;
 :root{
     --main-bg-color: rgb(28, 28, 28);
     --pink-neon:  #ff008d;
+    --blue-neon: #001eff;
+    --purple-neon: #8900ff;
 }
 
 body{
-    background-color: var(--main-bg-color);
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(28,28,28,1) 100%);
+    position: relative;
 }
 
 .intro{
@@ -44,11 +48,18 @@ body{
         }
     }
 
+    @keyframes fade-in {
+        0%{opacity: 0%;}
+        100%{opacity: 100%;}
+    }
+
     div:nth-child(1){
        background-image: url("../../img/photo_pro.png");
        background-position: center; 
        background-repeat: no-repeat; 
        background-size:contain;
+       opacity: 0%;
+       animation: fade-in 1s linear  forwards
 
 
         
@@ -61,7 +72,22 @@ body{
         flex-direction: column;
         gap: 5%;
 
-        
+        position: relative;
+
+        .round{
+           display: none;
+
+           @include computer{
+            display: block;
+            height: 50px;
+            width: 50px;
+            background-color: var(--pink-neon);
+            border-radius: 50%;
+            position:absolute;
+            top: 100px;
+            left: 30px;
+           }
+        }
 
         @include tablet{
             justify-content: center;
@@ -129,7 +155,8 @@ body{
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: 10%;
 
     h1{
         font-family: 'Oswald', sans-serif;
@@ -141,6 +168,11 @@ body{
             font-size: 50px;
         }
     }
+}
+
+@keyframes active_skill {
+    0%{opacity: 0%; bottom: 80px;}
+    100%{opacity: 100%; bottom: 0px;}
 }
 
 .skill{
@@ -160,6 +192,10 @@ body{
         height: 200px;
         position: relative;
 
+        .active_skill{
+            animation: active_skill 1s linear forwards ;
+        }
+
         p{
             
             font-size: 23px;
@@ -167,16 +203,8 @@ body{
             font-family: 'Roboto', sans-serif;
             text-align: center;
             position: absolute;
-            bottom: 0px;
-            // bottom: 80px;
-            // opacity: 0%;
-
-            // &:hover,
-            // &:focus{
-            //     transition: all 1s;
-            //     bottom: 0px;
-            //     opacity: 100%;
-            // }
+            bottom: 80px;
+            opacity: 0%;
         }
 
         img{
@@ -281,4 +309,23 @@ body{
 .buffer{
     width: 100%;
     height: 200px;
+}
+
+@keyframes Bubblefade{
+    0%{}
+    100%{transform: scale(0.1); opacity: 0%;}
+}
+
+.bubble{
+    position: absolute;
+    background-color: var(--pink-neon);
+    border-radius: 50%;
+    top: 0px;
+    height: 50px;
+    width: 50px;
+    animation: Bubblefade 1s linear forwards ;
+    z-index: -1;
+    box-shadow: 0px 0px 40px 20px #ff008d;
+ 
+
 }
