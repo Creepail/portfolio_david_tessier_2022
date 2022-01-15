@@ -46,14 +46,12 @@ function bubblespawn(a){
 
         if(randomcolor == 1){
             bubble.style.backgroundColor = 'var(--pink-neon)'
-            bubble.style.boxShadow = '0px 0px 40px 20px var(--pink-neon)'
+           
 
         } else if(randomcolor == 2) {
             bubble.style.backgroundColor = 'var(--blue-neon)'
-            bubble.style.boxShadow = '0px 0px 40px 20px var(--blue-neon)'
         } else {
             bubble.style.backgroundColor = 'var(--purple-neon)'
-            bubble.style.boxShadow = '0px 0px 40px 20px var(--purple-neon)'
         }
 
         let randomSize = Math.floor(Math.random() * 50) + 1;
