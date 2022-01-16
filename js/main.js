@@ -33,6 +33,67 @@ window.addEventListener('scroll', function(){
 })
 
 
+// header
+
+let header_btn = document.querySelectorAll('.header_scroll')
+let project = document.querySelector('.project')
+
+
+header_btn[0].addEventListener("click", function(){
+    window.scrollTo({
+        top: getOffset(skills).top,
+        left: getOffset(skills).left,
+        behavior: 'smooth'
+    });
+})
+
+header_btn[1].addEventListener("click", function(){
+    window.scrollTo({
+        top: getOffset(info).top,
+        left: getOffset(info).left,
+        behavior: 'smooth'
+    });
+})
+
+header_btn[2].addEventListener("click", function(){
+    window.scrollTo({
+        top: getOffset(project).top,
+        left: getOffset(project).left,
+        behavior: 'smooth'
+    });
+})
+
+
+// footer
+
+
+let footer_btn = document.querySelectorAll('.footer_scroll')
+
+footer_btn[0].addEventListener("click", function(){
+    window.scrollTo({
+        top: getOffset(skills).top,
+        left: getOffset(skills).left,
+        behavior: 'smooth'
+    });
+})
+
+footer_btn[1].addEventListener("click", function(){
+    window.scrollTo({
+        top: getOffset(info).top,
+        left: getOffset(info).left,
+        behavior: 'smooth'
+    });
+})
+
+footer_btn[2].addEventListener("click", function(){
+    window.scrollTo({
+        top: getOffset(project).top,
+        left: getOffset(project).left,
+        behavior: 'smooth'
+    });
+})
+
+
 function bubblespawn(a){
         
         let i = 0

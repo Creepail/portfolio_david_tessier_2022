@@ -11,6 +11,11 @@ font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
 }
 
+html, body{
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 :root{
     --main-bg-color: rgb(28, 28, 28);
     --pink-neon:  #ff008d;
@@ -85,6 +90,7 @@ body{
             font-family: 'Oswald', sans-serif;
             font-size: 46px;
             color: white;
+            text-align: center;
            
             @include tablet{
                 text-align: left;
@@ -102,6 +108,8 @@ body{
             color: white;
             font-family: 'Roboto', sans-serif;
             text-align: center;
+            padding: 35px;
+
 
             @include computer{
                 font-size: 32px;
@@ -279,7 +287,7 @@ body{
             }
 
             img{
-                width: 300px;
+                width: 90%;
             }
 
             p{
@@ -316,5 +324,83 @@ body{
     animation: Bubblefade 1s linear forwards ;
     z-index: -1;
  
+
+}
+
+
+header{
+    display: none;
+
+    @include computer{
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        width: fit-content;
+        height: 100px;
+        z-index: 10;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+
+        
+    p{
+        font-size: 23px;
+        color: white;
+        font-family: 'Oswald', sans-serif;
+        text-align: center;
+        background-color: var(--main-bg-color);
+        padding: 10px 10px 10px 10px;
+        border: 3px solid var( --pink-neon);
+        border-radius: 25px;
+        transition: all 1s;
+        margin: 10px 10px 10px 10px;
+        cursor: pointer;
+    }
+
+    }
+
+  
+
+}
+
+footer{
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+        height: 100px;
+        z-index: 10;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+
+        @include computer{
+            display: none;
+        }
+
+    div{
+        background-color: var(--main-bg-color);
+        border: 3px solid var( --pink-neon);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+
+
+    }
+
+        
+    p{
+        font-size: 17px;
+        color: white;
+        font-family: 'Oswald', sans-serif;
+        text-align: center;
+        padding: 5px 5px 5px 5px;
+        margin: 10px 10px 10px 10px;
+        cursor: pointer;
+    }
+
+    
 
 }
