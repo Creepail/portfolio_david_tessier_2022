@@ -141,3 +141,31 @@ function bubblespawn(a){
 }
 
 bubblespawn(5)
+
+let title = document.querySelector('title')
+let title_text = title.innerHTML
+let progress = 1
+
+
+function checkprogress(){
+    if(progress != -1){
+        animatedTitle()
+    } 
+}
+
+function animatedTitle(){
+
+    title.innerHTML = title_text.substring(progress)
+    title.innerHTML = title.innerHTML.concat(title_text) 
+    progress += 1
+
+    if(progress == title_text.length){
+        progress = 1
+    }
+
+    setTimeout(function() {
+        checkprogress()
+    }, 250);
+}
+
+checkprogress()
